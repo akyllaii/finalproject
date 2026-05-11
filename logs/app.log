@@ -1,0 +1,7 @@
+{"time": "2026-05-11 14:40:37.948235", "method": "GET", "path": "/docs", "status": 200, "ip": "127.0.0.1"}
+{"time": "2026-05-11 14:40:38.020530", "method": "GET", "path": "/openapi.json", "status": 200, "ip": "127.0.0.1"}
+{"time": "2026-05-11 14:40:44.216831", "method": "GET", "path": "/threat-report", "status": 200, "ip": "127.0.0.1"}
+{"time": "2026-05-11 14:41:16.883475", "method": "GET", "path": "/docs", "status": 200, "ip": "127.0.0.1"}
+{"time": "2026-05-11 14:41:16.913606", "method": "GET", "path": "/openapi.json", "status": 200, "ip": "127.0.0.1"}
+{"time": "2026-05-11 14:41:38.273121", "method": "POST", "path": "/login", "status": 200, "ip": "127.0.0.1"}
+{"time": "2026-05-11 14:41:48.414688", "method": "GET", "path": "/threat-report", "status": 200, "ip": "127.0.0.1"}
