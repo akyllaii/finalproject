@@ -22,7 +22,7 @@ def get_db():
     finally:
         db.close()
 
-# ---------------- REGISTER ----------------
+#REGISTER 
 @app.post("/register")
 def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = models.User(
@@ -33,7 +33,7 @@ def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db.commit()
     return {"message": "registered"}
 
-# ---------------- LOGIN ----------------
+# LOGIN 
 @app.post("/login")
 def login(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = db.query(models.User).filter_by(username=user.username).first()
@@ -43,7 +43,7 @@ def login(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
     return {"token": create_token(user.username)}
 
-# ---------------- PRODUCTS CRUD ----------------
+#PRODUCTS CRUD 
 @app.post("/products")
 def create_product(p: schemas.ProductCreate, db: Session = Depends(get_db)):
     prod = models.Product(**p.dict())
@@ -74,7 +74,7 @@ def delete_product(id: int, db: Session = Depends(get_db)):
     db.commit()
     return {"message": "deleted"}
 
-# ---------------- ORDERS ----------------
+#  ORDERS
 @app.post("/orders")
 def order(o: schemas.OrderCreate, db: Session = Depends(get_db)):
     db_order = models.Order(**o.dict())
@@ -82,7 +82,7 @@ def order(o: schemas.OrderCreate, db: Session = Depends(get_db)):
     db.commit()
     return {"message": "order placed"}
 
-# ---------------- THREAT DETECTION ----------------
+# THREAT DETECTION 
 model = joblib.load("app/ml/model.pkl")
 
 @app.get("/threat-report")
